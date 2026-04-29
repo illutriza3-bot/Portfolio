@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Riza O. Illut — IT & Technical Support Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b0f1a;--bg2:#111827;--bg3:#1a2233;--bg4:#1f2d42;
+  --teal:#0ea5e9;--teal2:#38bdf8;--teal3:#7dd3fc;--teal-dim:#0c4a6e;
+  --gold:#f59e0b;
+  --text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;
+  --border:#1e3a5f;--border2:#1e293b;
+  --r:12px;--rs:6px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--teal-dim);border-radius:99px}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(11,15,26,0.93);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border2);
+  padding:0 clamp(1rem,5vw,5rem);height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-brand{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-brand span{color:var(--teal)}
+.ndot{width:6px;height:6px;background:var(--teal);border-radius:50%;display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text2);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:100px clamp(1rem,6vw,6rem) 4rem;position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 55% 50% at 72% 38%,rgba(14,165,233,.08) 0%,transparent 70%),
+    radial-gradient(ellipse 35% 55% at 8% 82%,rgba(245,158,11,.04) 0%,transparent 60%);
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:linear-gradient(rgba(14,165,233,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(14,165,233,.03) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 400px;gap:4rem;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.3);color:var(--teal2);font-size:.74rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:99px;margin-bottom:1.5rem}
+.badge::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.06;letter-spacing:-.03em;color:var(--text);margin-bottom:1.25rem}
+h1 .t{color:var(--teal)}
+h1 .g{-webkit-text-fill-color:transparent;-webkit-text-stroke:1px rgba(241,245,249,.28)}
+.hero-desc{font-size:1rem;color:var(--text2);line-height:1.8;margin-bottom:2rem;max-width:500px}
+.btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#021d2e;padding:.75rem 1.75rem;border-radius:var(--rs);text-decoration:none;font-size:.875rem;font-weight:600;font-family:'Syne',sans-serif;transition:background .2s,transform .15s}
+.btn-p:hover{background:var(--teal2);transform:translateY(-2px)}
+.btn-g{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text2);padding:.75rem 1.75rem;border-radius:var(--rs);border:1px solid var(--border);text-decoration:none;font-size:.875rem;transition:border-color .2s,color .2s}
+.btn-g:hover{border-color:var(--teal);color:var(--teal)}
+
+.hcard{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:2rem;position:relative;overflow:hidden}
+.hcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--gold),var(--teal))}
+.av{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--teal-dim),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;color:#fff;margin-bottom:1.25rem;border:2px solid rgba(14,165,233,.4)}
+.hname{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);margin-bottom:2px}
+.hrole{font-size:.72rem;color:var(--teal3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem}
+.stat{background:var(--bg4);border:1px solid var(--border2);border-radius:var(--rs);padding:.875rem}
+.stat-n{font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;color:var(--teal);line-height:1}
+.stat-l{font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+.hdiv{border:none;border-top:1px solid var(--border2);margin:0 0 1.25rem}
+.hinfo{display:flex;flex-direction:column;gap:.6rem}
+.hrow{display:flex;align-items:center;gap:10px;font-size:.8rem;color:var(--text2)}
+.hrow svg{color:var(--teal3);flex-shrink:0}
+
+.sec{padding:6rem clamp(1rem,6vw,6rem);max-width:1300px;margin:0 auto}
+.sec-in{max-width:1100px;margin:0 auto}
+.slbl{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem;display:flex;align-items:center;gap:8px}
+.slbl::before{content:'';width:20px;height:1px;background:var(--teal)}
+h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.6rem);letter-spacing:-.03em;color:var(--text);margin-bottom:3rem;line-height:1.15}
+h2 span{color:var(--teal)}
+.divl{border:none;border-top:1px solid var(--border2);max-width:1100px;margin:0 auto}
+
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.sc{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:1.5rem;transition:border-color .25s,transform .2s;position:relative;overflow:hidden}
+.sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.sc:hover{border-color:var(--teal);transform:translateY(-3px)}
+.sc:hover::after{transform:scaleX(1)}
+.si{width:42px;height:42px;border-radius:var(--rs);background:rgba(14,165,233,.12);border:1px solid rgba(14,165,233,.2);display:flex;align-items:center;justify-content:center;color:var(--teal);margin-bottom:1rem}
+.sc h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;color:var(--text);margin-bottom:.5rem}
+.sc p{font-size:.8rem;color:var(--text2);line-height:1.65}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2.5rem}
+.tag{font-size:.72rem;padding:.3rem .8rem;border-radius:99px;border:1px solid var(--border);color:var(--text3);background:var(--bg3);transition:all .2s;cursor:default}
+.tag:hover{border-color:var(--teal);color:var(--teal);background:rgba(14,165,233,.08)}
+.tag.hi{border-color:rgba(14,165,233,.4);color:var(--teal2);background:rgba(14,165,233,.1)}
+
+.cw{position:relative}
+.co{overflow:hidden;border-radius:var(--r)}
+.ct{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.cs{min-width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:2.25rem}
+.cst{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1.25rem}
+.cstt{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text)}
+.csc{font-size:.82rem;color:var(--teal3);margin-top:3px}
+.csbadge{font-size:.7rem;font-weight:600;letter-spacing:.06em;padding:5px 12px;border-radius:99px;white-space:nowrap;background:rgba(14,165,233,.12);border:1px solid rgba(14,165,233,.3);color:var(--teal2)}
+.csbadge.cur{background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.3);color:#34d399}
+.csdiv{border:none;border-top:1px solid var(--border2);margin:0 0 1.25rem}
+.csul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.csul li{font-size:.875rem;color:var(--text2);padding-left:1.25rem;position:relative;line-height:1.6}
+.csul li::before{content:'';position:absolute;left:0;top:.58em;width:5px;height:5px;border-radius:50%;background:var(--teal)}
+.cctl{display:flex;align-items:center;justify-content:space-between;margin-top:1.5rem}
+.cdots{display:flex;gap:6px}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--border);cursor:pointer;transition:all .3s;border:none;padding:0}
+.dot.on{background:var(--teal);width:20px}
+.cbg{display:flex;gap:8px}
+.cb{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--bg4);color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.cb:hover{border-color:var(--teal);color:var(--teal);background:rgba(14,165,233,.1)}
+
+.cerg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.cerc{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:1rem;transition:border-color .2s}
+.cerc:hover{border-color:var(--teal)}
+.ceri{width:38px;height:38px;border-radius:var(--rs);flex-shrink:0;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.cern{font-size:.875rem;font-weight:500;color:var(--text);margin-bottom:3px}
+.cerd{font-size:.72rem;color:var(--text3);letter-spacing:.04em}
+
+.el{display:flex;flex-direction:column;gap:1rem}
+.ei{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:1.25rem 1.75rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:border-color .2s}
+.ei:hover{border-color:var(--teal)}
+.ed{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:var(--text);margin-bottom:3px}
+.es{font-size:.8rem;color:var(--text2)}
+.ey{font-size:.72rem;color:var(--teal3);background:rgba(14,165,233,.08);border:1px solid rgba(14,165,233,.2);padding:4px 10px;border-radius:99px;white-space:nowrap;flex-shrink:0}
+
+.ctw{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;overflow:hidden}
+.ctw::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.06) 0%,transparent 70%)}
+.ctw::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),transparent)}
+.ch{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--text);letter-spacing:-.03em;line-height:1.2;margin-bottom:1rem}
+.ch span{color:var(--teal)}
+.csub{font-size:.875rem;color:var(--text2);line-height:1.8}
+.cl{display:flex;flex-direction:column;gap:.75rem;position:relative;z-index:1}
+.ci{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:var(--bg4);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);text-decoration:none;font-size:.875rem;transition:border-color .2s,background .2s}
+.ci:hover{border-color:var(--teal);background:rgba(14,165,233,.06)}
+.ci svg{color:var(--teal);flex-shrink:0}
+
+footer{text-align:center;padding:2rem;font-size:.78rem;color:var(--text3);border-top:1px solid var(--border2)}
+footer span{color:var(--teal)}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .ctw{grid-template-columns:1fr;padding:2rem 1.5rem;gap:2rem}
+  .nav-links{display:none}
+}
+@media(max-width:600px){
+  .hero{padding:90px 1.25rem 3rem}
+  .sec{padding:4rem 1.25rem}
+  .cs{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand"><span class="ndot"></span> Riza <span>Illut</span></a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="badge">Available for opportunities</div>
+      <h1>
+        Technical Support<br>
+        <span class="t">&amp; IT Professional</span><br>
+        <span class="g">Based in Cebu, PH</span>
+      </h1>
+      <p class="hero-desc">8+ years across technical support, software engineering, SharePoint administration, and enterprise customer service — bridging technology and people with precision and care.</p>
+      <div class="btns">
+        <a href="#experience" class="btn-p">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+          View Experience
+        </a>
+        <a href="#contact" class="btn-g">Get in touch →</a>
+      </div>
+    </div>
+    <div class="hcard">
+      <div class="av">RI</div>
+      <div class="hname">Riza O. Illut</div>
+      <div class="hrole">Technical Support Specialist</div>
+      <div class="stats">
+        <div class="stat"><div class="stat-n">8+</div><div class="stat-l">Years exp.</div></div>
+        <div class="stat"><div class="stat-n">9</div><div class="stat-l">Roles held</div></div>
+        <div class="stat"><div class="stat-n">IT</div><div class="stat-l">Core domain</div></div>
+        <div class="stat"><div class="stat-n">PH</div><div class="stat-l">Cebu based</div></div>
+      </div>
+      <hr class="hdiv"/>
+      <div class="hinfo">
+        <div class="hrow"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>illutriza2@gmail.com</div>
+        <div class="hrow"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.07 5.18 2 2 0 015.06 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>+63 9469 923 5967</div>
+        <div class="hrow"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Santa Fe, Cebu, Philippines 6047</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divl"/>
+<div class="sec" id="skills">
+  <div class="sec-in">
+    <div class="slbl">Core Competencies</div>
+    <h2>What I bring to <span>every role</span></h2>
+    <div class="sg">
+      <div class="sc"><div class="si"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>Technical Support</h3><p>Hardware, software, and network troubleshooting with experience in Jira ticketing and Microsoft 365 environments.</p></div>
+      <div class="sc"><div class="si"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Software Engineering</h3><p>C#, SQL, PowerShell, JavaScript, PHP, HTML &amp; CSS. Built and maintained enterprise applications at Accenture.</p></div>
+      <div class="sc"><div class="si"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><h3>Customer Service</h3><p>Multi-channel support via phone, chat, and email for enterprise clients including United Airlines and Yotpo.</p></div>
+      <div class="sc"><div class="si"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>SharePoint &amp; Azure</h3><p>Site provisioning, access management, permissions, and Azure + M365 administration for enterprise clients.</p></div>
+      <div class="sc"><div class="si"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Automation</h3><p>Power Automate and Zapier workflows. Shopify and WooCommerce integration support and troubleshooting.</p></div>
+      <div class="sc"><div class="si"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><h3>Admin &amp; HR Ops</h3><p>Payroll, bookkeeping, compliance, procurement, and multi-branch coordination across private and public sectors.</p></div>
+    </div>
+    <div class="tags">
+      <span class="tag hi">SharePoint</span><span class="tag hi">Microsoft 365</span><span class="tag hi">Azure</span><span class="tag hi">Jira</span>
+      <span class="tag">SQL</span><span class="tag">PowerShell</span><span class="tag">C#</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">HTML/CSS</span>
+      <span class="tag">Power Automate</span><span class="tag">Zapier</span><span class="tag">Shopify</span><span class="tag">WooCommerce</span><span class="tag">Graphic Design</span><span class="tag">MS Office</span><span class="tag">CRM</span>
+    </div>
+  </div>
+</div>
+
+<hr class="divl"/>
+<div class="sec" id="experience">
+  <div class="sec-in">
+    <div class="slbl">Work History</div>
+    <h2>Where I've made an <span>impact</span></h2>
+    <div class="cw">
+      <div class="co"><div class="ct" id="ct">
+
+        <div class="cs">
+          <div class="cst"><div><div class="cstt">Technical Support Specialist</div><div class="csc">Quant Tekel Consultancy Ltd</div></div><span class="csbadge cur">Jan 2026 – Present</span></div>
+          <hr class="csdiv"/>
+          <ul class="csul">
+            <li>Process and manage orders accurately, ensuring timely fulfillment and documentation.</li>
+            <li>Handle chargeback processing — investigating disputes and coordinating resolutions.</li>
+            <li>Assist with server issues and trade issue resolution, ensuring system stability.</li>
+            <li>Monitor and manage support tickets in Jira, tracking technical issues to resolution.</li>
+          </ul>
+        </div>
+
+        <div class="cs">
+          <div class="cst"><div><div class="cstt">Customer Support Specialist</div><div class="csc">Tallant Asia Inc.</div></div><span class="csbadge">Jul 2025 – Dec 2025</span></div>
+          <hr class="csdiv"/>
+          <ul class="csul">
+            <li>Delivered timely customer support, resolving inquiries and issues professionally.</li>
+            <li>Maintained accurate records of customer interactions and follow-ups.</li>
+            <li>Collaborated with internal teams to escalate and resolve complex customer concerns.</li>
+          </ul>
+        </div>
+
+        <div class="cs">
+          <div class="cst"><div><div class="cstt">L&amp;R Support T1 Premium Agent</div><div class="csc">Supporting Enterprise (Yotpo)</div></div><span class="csbadge">Nov 2024 – Feb 2025</span></div>
+          <hr class="csdiv"/>
+          <ul class="csul">
+            <li>Handled live chat support for Yotpo Loyalty &amp; Referrals products with timely, accurate assistance.</li>
+            <li>Troubleshot Shopify integration issues ensuring seamless client store functionality.</li>
+            <li>Educated clients on best practices to maximize customer engagement and retention.</li>
+            <li>Collaborated with CSMs, Product, and Engineering to escalate complex issues.</li>
+          </ul>
+        </div>
+
+        <div class="cs">
+          <div class="cst"><div><div class="cstt">Associate Software Engineer</div><div class="csc">Accenture Inc.</div></div><span class="csbadge">Aug 2022 – Aug 2024</span></div>
+          <hr class="csdiv"/>
+          <ul class="csul">
+            <li>Maintained and administered SharePoint sites, ensuring optimal performance and user accessibility.</li>
+            <li>Provisioned new SharePoint sites per project or client requirements.</li>
+            <li>Managed user access, permissions, and configurations on SharePoint, Azure, and M365.</li>
+            <li>Developed, tested, and maintained software applications based on client requirements.</li>
+            <li>Supported software deployment, configuration, and post-production maintenance.</li>
+          </ul>
+        </div>
+
+        <div class="cs">
+          <div class="cst"><div><div class="cstt">Customer Service Representative</div><div class="csc">Wipro Philippines — United Airlines</div></div><span class="csbadge">Nov 2021 – May 2022</span></div>
+          <hr class="csdiv"/>
+          <ul class="csul">
+            <li>Provided multi-channel support via phone, email, and chat for United Airlines passengers.</li>
+            <li>Assisted with flight reservations, ticket changes, cancellations, and rebooking.</li>
+            <li>Resolved concerns related to delays, disruptions, refunds, and compensation.</li>
+            <li>Addressed MileagePlus inquiries including points balance, redemption, and membership status.</li>
+          </ul>
+        </div>
+
+        <div class="cs">
+          <div class="cst"><div><div class="cstt">Admin Officer</div><div class="csc">Cebu Andok's Corporation</div></div><span class="csbadge">May 2020 – Aug 2021</span></div>
+          <hr class="csdiv"/>
+          <ul class="csul">
+            <li>Oversaw daily administrative operations across multiple Cebu branches.</li>
+            <li>Handled documentation for LGUs, BIR, DOLE, and other regulatory bodies.</li>
+            <li>Consolidated branch reports (sales, inventory, manpower) and submitted to head office.</li>
+            <li>Managed office supplies inventory, procurement, and distribution to all branches.</li>
+          </ul>
+        </div>
+
+        <div class="cs">
+          <div class="cst"><div><div class="cstt">Earlier Government Roles</div><div class="csc">LGU Santa Fe &amp; Madridejos Community College</div></div><span class="csbadge">2016 – 2020</span></div>
+          <hr class="csdiv"/>
+          <ul class="csul">
+            <li>Barangay Treasurer — managed fiscal records, collections, and COA compliance.</li>
+            <li>Computer Lab Assistant — hardware/software maintenance and faculty support.</li>
+            <li>HRMO Staff — payroll, employee records, recruitment, and HR documentation.</li>
+            <li>IT Staff (Rural Health Unit) — EHR management, CHITS and PhilHealth E-Claims implementation.</li>
+          </ul>
+        </div>
+
+      </div></div>
+      <div class="cctl">
+        <div class="cdots" id="dots"></div>
+        <div class="cbg">
+          <button class="cb" id="prev" aria-label="Previous"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button class="cb" id="next" aria-label="Next"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divl"/>
+<div class="sec" id="credentials">
+  <div class="sec-in">
+    <div class="slbl">Education &amp; Certifications</div>
+    <h2>Academic &amp; professional <span>credentials</span></h2>
+    <div class="el" style="margin-bottom:2.5rem">
+      <div class="ei"><div><div class="ed">BS Information Technology — Major in Programming</div><div class="es">Madridejos Community College, Cebu</div></div><span class="ey">2013 – 2017</span></div>
+      <div class="ei"><div><div class="ed">Secondary Education</div><div class="es">Santa Fe National High School, Cebu</div></div><span class="ey">2008 – 2012</span></div>
+    </div>
+    <div class="slbl" style="margin-bottom:1rem">Certifications &amp; Trainings</div>
+    <div class="cerg">
+      <div class="cerc"><div class="ceri"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div><div class="cern">Certified Lean Six Sigma — White Belt</div><div class="cerd">January 2024</div></div></div>
+      <div class="cerc"><div class="ceri"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="cern">Creative Web Design — 102 Hours</div><div class="cerd">Oct – Nov 2023</div></div></div>
+      <div class="cerc"><div class="ceri"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div><div class="cern">Graphic Design Concepts — 48 Hours</div><div class="cerd">November 2024</div></div></div>
+      <div class="cerc"><div class="ceri"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><div><div class="cern">Employers Forum</div><div class="cerd">August 2018</div></div></div>
+      <div class="cerc"><div class="ceri"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div><div><div class="cern">4th International River Summit</div><div class="cerd">November 2018</div></div></div>
+      <div class="cerc"><div class="ceri"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="cern">PhilHealth Seminar</div><div class="cerd">February 2020</div></div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divl"/>
+<div class="sec" id="contact">
+  <div class="sec-in">
+    <div class="ctw">
+      <div>
+        <div class="slbl" style="margin-bottom:.75rem">Get in touch</div>
+        <div class="ch">Let's work <span>together</span></div>
+        <p class="csub">Open to technical support, IT administration, software engineering, and customer service roles. Available for remote and on-site positions in the Philippines and beyond.</p>
+      </div>
+      <div class="cl">
+        <a href="mailto:illutriza2@gmail.com" class="ci"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>illutriza2@gmail.com</a>
+        <a href="tel:+639469923596" class="ci"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.07 5.18 2 2 0 015.06 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>+63 9469 923 5967</a>
+        <div class="ci"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Balidbid, Santa Fe, Cebu, Philippines 6047</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer><p>© 2026 <span>Riza O. Illut</span> · Santa Fe, Cebu, Philippines · Built with care</p></footer>
+
+<script>
+(function(){
+  var t=document.getElementById('ct');
+  var d=document.getElementById('dots');
+  var slides=t.querySelectorAll('.cs');
+  var n=slides.length,c=0;
+  slides.forEach(function(_,i){
+    var b=document.createElement('button');
+    b.className='dot'+(i===0?' on':'');
+    b.setAttribute('aria-label','Slide '+(i+1));
+    b.addEventListener('click',function(){go(i)});
+    d.appendChild(b);
+  });
+  function go(i){
+    c=i;
+    t.style.transform='translateX(-'+i*100+'%)';
+    d.querySelectorAll('.dot').forEach(function(b,j){b.classList.toggle('on',j===i)});
+  }
+  document.getElementById('prev').addEventListener('click',function(){go((c-1+n)%n)});
+  document.getElementById('next').addEventListener('click',function(){go((c+1)%n)});
+})();
+</script>
+</body>
+</html>
